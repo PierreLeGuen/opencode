@@ -1,3 +1,4 @@
+import "./footer-legal.css"
 import { A } from "@solidjs/router"
 import { LanguagePicker } from "~/component/language-picker"
 import { useI18n } from "~/context/i18n"

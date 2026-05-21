@@ -1,3 +1,4 @@
+import "./footer-legal.css"
 import { createAsync } from "@solidjs/router"
 import { createMemo } from "solid-js"
 import { github } from "~/lib/github"

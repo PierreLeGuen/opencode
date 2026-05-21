@@ -31,10 +31,6 @@ declare module "sst" {
       "type": "sst.sst.Secret"
       "value": string
     }
-    "Console": {
-      "type": "sst.cloudflare.SolidStart"
-      "url": string
-    }
     "DISCORD_INCIDENT_WEBHOOK_URL": {
       "type": "sst.sst.Secret"
       "value": string
@@ -127,9 +123,18 @@ declare module "sst" {
       "type": "sst.sst.Linkable"
       "value": string
     }
-    "Teams": {
-      "type": "sst.cloudflare.SolidStart"
+    "Stats": {
+      "type": "sst.aws.SolidStart"
       "url": string
+    }
+    "StatsDatabase": {
+      "database": string
+      "host": string
+      "password": string
+      "port": number
+      "type": "sst.sst.Linkable"
+      "url": string
+      "username": string
     }
     "Web": {
       "type": "sst.cloudflare.Astro"

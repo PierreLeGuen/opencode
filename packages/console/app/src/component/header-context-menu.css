@@ -1,3 +1,181 @@
+[data-component="top"] {
+  height: 80px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px var(--padding, 80px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--header-color-background, hsl(0, 20%, 99%));
+  border-bottom: 1px solid var(--header-color-border-weak, hsla(0, 100%, 3%, 0.12));
+  color: var(--header-color-text, hsl(0, 1%, 39%));
+  font-family: var(--font-mono);
+}
+
+[data-component="top"] img {
+  width: auto;
+  height: 34px;
+}
+
+[data-component="top"] [data-component="nav-desktop"] ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+[data-component="top"] [data-component="nav-desktop"] li {
+  display: inline-block;
+}
+
+[data-component="top"] a {
+  color: var(--header-color-text-strong, hsl(0, 5%, 12%));
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+[data-component="top"] a:hover {
+  text-decoration: underline;
+  text-underline-offset: var(--space-1, 4px);
+  text-decoration-thickness: 1px;
+}
+
+[data-component="top"] a span {
+  color: var(--header-color-text-weak, hsl(0, 1%, 60%));
+}
+
+[data-component="top"] [data-slot="cta-button"] {
+  background: var(--header-color-background-strong, hsl(0, 5%, 12%));
+  color: var(--header-color-text-inverted, hsl(0, 20%, 99%));
+  padding: 8px 16px 8px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+[data-component="top"] [data-slot="cta-button"]:hover {
+  background: var(--header-color-background-strong-hover, hsl(0, 5%, 18%));
+  text-decoration: none;
+}
+
+[data-component="top"] [data-component="nav-mobile"] button > svg {
+  color: var(--header-color-icon, hsl(0, 1%, 55%));
+}
+
+[data-component="top"] [data-component="nav-mobile-toggle"] {
+  border: none;
+  background: none;
+  outline: none;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  margin-right: -8px;
+}
+
+[data-component="top"] [data-component="nav-mobile-toggle"]:hover {
+  background: var(--header-color-background-weak, hsl(0, 8%, 97%));
+}
+
+[data-component="top"] [data-component="nav-mobile"] {
+  display: none;
+}
+
+[data-component="top"] [data-slot="logo dark"] {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-component="top"] {
+    --header-color-background: hsl(0, 9%, 7%);
+    --header-color-background-weak: hsl(0, 6%, 10%);
+    --header-color-background-strong: hsl(0, 15%, 94%);
+    --header-color-background-strong-hover: hsl(0, 15%, 97%);
+    --header-color-text: hsl(0, 4%, 71%);
+    --header-color-text-weak: hsl(0, 2%, 49%);
+    --header-color-text-strong: hsl(0, 15%, 94%);
+    --header-color-text-inverted: hsl(0, 9%, 7%);
+    --header-color-border-weak: hsl(0, 4%, 23%);
+    --header-color-icon: hsl(10, 3%, 43%);
+  }
+
+  [data-component="top"] [data-slot="logo light"] {
+    display: none;
+  }
+
+  [data-component="top"] [data-slot="logo dark"] {
+    display: block;
+  }
+}
+
+@media (max-width: 60rem) {
+  [data-component="top"] {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 55rem) {
+  [data-component="top"] [data-component="nav-desktop"] ul {
+    gap: 24px;
+  }
+
+  [data-component="top"] [data-slot="cta-button"] {
+    display: none;
+  }
+}
+
+@media (max-width: 40rem) {
+  [data-component="top"] [data-component="nav-desktop"] {
+    display: none;
+  }
+
+  [data-component="top"] [data-component="nav-mobile"] {
+    display: block;
+  }
+
+  [data-component="top"] [data-component="nav-mobile-icon"] {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  [data-component="top"] [data-component="nav-mobile-menu-list"] {
+    position: fixed;
+    background: var(--header-color-background, hsl(0, 20%, 99%));
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 100vh;
+  }
+
+  [data-component="top"] [data-component="nav-mobile-menu-list"] ul {
+    list-style: none;
+    padding: 20px 0;
+  }
+
+  [data-component="top"] [data-component="nav-mobile-menu-list"] a {
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+  }
+
+  [data-component="top"] [data-component="nav-mobile-menu-list"] a:hover {
+    background: var(--header-color-background-weak, hsl(0, 8%, 97%));
+  }
+}
+
 .context-menu {
   position: fixed;
   z-index: 1000;
